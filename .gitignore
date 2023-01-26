@@ -475,3 +475,15 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+API/bin
+API/obj
+
+Application/bin
+Application/obj
+
+Domain/bin
+Domain/obj
+
+Persistence/bin
+Persistence/obj
