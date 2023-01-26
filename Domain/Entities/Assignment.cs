@@ -7,6 +7,6 @@ namespace Domain.Entities
         public DateTime DateDeleted { get; set; }
         public DateTime Deadline { get; set; }
         public Professor Professor { get; set; }
-        public virtual ICollection<File> Files { get; set; } = new List<File>();
+        public virtual ICollection<Media> Medias { get; set; } = new List<Media>();
     }
 }
