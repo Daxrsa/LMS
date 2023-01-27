@@ -3,6 +3,7 @@ namespace Domain.Entities
     public class Course
     {
         public Guid Id { get; set; }
+        public Guid ExamId { get; set; }
         public string Title { get; set; }
         public int NrOfStudents { get; set; }
         public Department Department { get; set; }
