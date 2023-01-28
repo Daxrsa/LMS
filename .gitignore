@@ -487,3 +487,7 @@ Domain/obj
 
 Persistence/bin
 Persistence/obj
+ 
+lms.db
+lms.db-shm
+lms.db-wal
