@@ -1,5 +1,7 @@
+global using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using Persistence.Repositories.AdministrationRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IAdministrationRepository, AdministrationRepository>();
+
 builder.Services.AddDbContext<DataContext>(opt =>{
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -35,6 +41,7 @@ try
 {
     var context = services.GetRequiredService<DataContext>();
     await context.Database.MigrateAsync();
+    await Seed.SeedData(context);
 }
 catch (Exception ex)
 {
