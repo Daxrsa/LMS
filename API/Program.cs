@@ -1,4 +1,6 @@
 global using Domain.Entities;
+using Application.Services.ExamService;
+using Application.Services.RequestService;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Persistence.Repositories.AdministrationRepository;
@@ -13,7 +15,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IAdministrationRepository, AdministrationRepository>();
+builder.Services.AddScoped<IAdministrationRepository, AdministrationRepository>(); //remove later
+builder.Services.AddScoped<IExamService, ExamService>();
+builder.Services.AddScoped<IRequestService, RequestService>();
 
 builder.Services.AddDbContext<DataContext>(opt =>{
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));

@@ -9,6 +9,7 @@ namespace Application.Services.ExamService
         Task<List<Exam>> AddExam(Exam exam);
         Task<List<Exam>> UpdateExam(Guid id, Exam request);
         Task<List<Exam>> DeleteExam(Guid id);
+        Task handleRequestPresentExam();
     }
 }
     

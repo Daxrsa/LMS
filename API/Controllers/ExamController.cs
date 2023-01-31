@@ -58,6 +58,12 @@ namespace API.Controllers
             }
             return Ok(result);
         }
+
+        [HttpPost("{present-exam}")]
+        public Task<ActionResult> PresentExam()
+        {
+            return (Task<ActionResult>)_examService.handleRequestPresentExam();
+        }
     }
 }
     

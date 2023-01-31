@@ -54,10 +54,15 @@ namespace Application.Services.ExamService
             {
                 return null;
             }
-            
+
             await _context.SaveChangesAsync();
             return await _context.Exam.ToListAsync();
         }
+
+        public Task handleRequestPresentExam()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-    
+

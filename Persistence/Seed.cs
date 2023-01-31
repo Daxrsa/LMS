@@ -55,3 +55,21 @@ namespace Persistence
         }
     }
 }
+/*private static List<Request> requests = new List<Request>
+        {
+        new Request
+        {
+            Id = Guid.Parse("791b9085-fd1f-4453-823d-1b4e46219b4a"),
+            Description = "I have a request"
+        },
+        new Request
+        {
+            Id = Guid.Parse("ff9e2ec0-3c53-43c6-b074-47b5bff58d83"),
+            Description = "Some text goes here"
+        },
+        new Request
+        {
+            Id = Guid.Parse("5c3ad29d-e8e6-4196-a9cd-e0db3123cd10"),
+            Description = "Test test test"
+        }
+        };*/
