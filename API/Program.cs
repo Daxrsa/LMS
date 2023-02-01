@@ -1,5 +1,5 @@
 global using Domain.Entities;
-using Application.Services.ExamService;
+global using Application.Services.ExamService;
 using Application.Services.RequestService;
 using Microsoft.EntityFrameworkCore;
 using Persistence;

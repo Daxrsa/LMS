@@ -13,7 +13,7 @@ namespace Persistence
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
-        public DbSet<Exam> Exam { get; set; }
+        public DbSet<Exam> Exams { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<Professor> Professor { get; set; }
         public DbSet<Request> Request { get; set; }

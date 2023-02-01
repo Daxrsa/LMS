@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Application.Services.ExamService;
 
 namespace API.Controllers
 {
@@ -10,11 +9,11 @@ namespace API.Controllers
         private readonly IExamService _examService;
         public ExamController(IExamService examService)
         {
-            examService = _examService;
+            _examService = examService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Exam>>> GetExams()
+        public async Task<ActionResult<List<Exam>>> GetAllExams()
         {
             return await _examService.GetExams();
         }
