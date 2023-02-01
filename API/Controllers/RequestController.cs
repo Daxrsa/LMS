@@ -10,13 +10,13 @@ namespace API.Controllers
         private readonly IRequestService _requestService;
         public RequestController(IRequestService requestService)
         {
-            requestService = _requestService;
+            _requestService = requestService;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Request>>> GetRequests()
         {
-            return await _requestService.GetRequestsAsync();
+            return await _requestService.GetAllRequests();
         }
 
         [HttpGet("{id}")]

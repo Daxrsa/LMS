@@ -1,6 +1,6 @@
 global using Domain.Entities;
 global using Application.Services.ExamService;
-using Application.Services.RequestService;
+global using Application.Services.RequestService;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Persistence.Repositories.AdministrationRepository;

@@ -12,7 +12,7 @@ namespace Application.Services.RequestService
             _context = context;
         }
         
-        public async Task<List<Request>> GetRequestsAsync()
+        public async Task<List<Request>> GetAllRequests()
         {
             var results = await _context.Request.ToListAsync();
             return results;
