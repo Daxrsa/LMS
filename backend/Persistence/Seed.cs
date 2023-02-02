@@ -73,3 +73,28 @@ namespace Persistence
             Description = "Test test test"
         }
         };*/
+
+        /*private static List<Assignment> assignments = new List<Assignment>
+            {
+                new Assignment
+                {
+                    Id = Guid.Parse("9484bf72-9988-4a66-962d-9176f0f18b4d"),
+                    DateCreated = DateTime.Parse("12/07/2023 23:00"),
+                    DateDeleted = DateTime.Parse("12/07/2023 23:00"),
+                    Deadline = DateTime.Parse("12/07/2023 23:00")
+                },
+                new Assignment
+                {
+                    Id = Guid.Parse("1302349e-2b57-47f6-8e4a-18147e49b5ba"),
+                    DateCreated = DateTime.Parse("12/07/2023 23:00"),
+                    DateDeleted = DateTime.Parse("12/07/2023 23:00"),
+                    Deadline = DateTime.Parse("12/07/2023 23:00")
+                },
+                new Assignment
+                {
+                    Id = Guid.Parse("57147200-36cc-49e6-9ed4-286e8d2b6ac3"),
+                    DateCreated = DateTime.Parse("12/07/2023 23:00"),
+                    DateDeleted = DateTime.Parse("12/07/2023 23:00"),
+                    Deadline = DateTime.Parse("12/07/2023 23:00")
+                }
+            };*/
