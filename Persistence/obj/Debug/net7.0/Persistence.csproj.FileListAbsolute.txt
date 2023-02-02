@@ -1,0 +1,15 @@
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\bin\Debug\net7.0\Persistence.deps.json
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\bin\Debug\net7.0\Persistence.dll
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\bin\Debug\net7.0\Persistence.pdb
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\bin\Debug\net7.0\Domain.dll
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\bin\Debug\net7.0\Domain.pdb
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfo.cs
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.csproj.CopyComplete
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.dll
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\refint\Persistence.dll
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\Persistence.pdb
+C:\Users\acer\Desktop\Poema\Viti 3\LMS\Persistence\obj\Debug\net7.0\ref\Persistence.dll
