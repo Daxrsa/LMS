@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Persistence;
 
 namespace API.Controllers
 {
