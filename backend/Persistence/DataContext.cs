@@ -20,5 +20,6 @@ namespace Persistence
         public DbSet<Student> Students { get; set; }
         public DbSet<Transcript> Transcripts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }

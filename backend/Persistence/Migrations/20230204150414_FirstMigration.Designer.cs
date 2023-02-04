@@ -11,8 +11,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230202195923_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230204150414_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,6 +173,27 @@ namespace Persistence.Migrations
                     b.HasIndex("AssignmentId");
 
                     b.ToTable("Medias");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Photo", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("Domain.Entities.Professor", b =>
@@ -395,6 +416,13 @@ namespace Persistence.Migrations
                         .HasForeignKey("AssignmentId");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Photo", b =>
+                {
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany("Photos")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("Domain.Entities.Request", b =>
                 {
                     b.HasOne("Domain.Entities.Administration", "Administration")
@@ -478,6 +506,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
+                    b.Navigation("Photos");
+
                     b.Navigation("Requests");
                 });
 #pragma warning restore 612, 618

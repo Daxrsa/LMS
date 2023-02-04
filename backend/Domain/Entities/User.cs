@@ -11,5 +11,6 @@ namespace Domain.Entities
         public string PhoneNumber { get; set; } 
         public DateTime BirthDate { get; set; }
         public virtual ICollection<Request> Requests { get; set; } = new List<Request>();
+        public virtual ICollection<Photo> Photos { get; set; } = new List<Photo>();
     }
 }

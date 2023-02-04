@@ -3,13 +3,15 @@ global using Application.Services.ExamService;
 global using Application.Services.RequestService;
 global using Application.Services.AssignmentService;
 global using Application.Services.AuthService;
+global using Application.Services.PhotoService;
+using Application.Services.CourseService;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.OpenApi.Models;
-using Application.Services.CourseService;
+using Application.Photos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +37,8 @@ builder.Services.AddScoped<IRequestService, RequestService>();
 builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary")); //just added
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options => {
