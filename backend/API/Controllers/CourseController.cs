@@ -4,7 +4,6 @@ using Application.Services.CourseService;
 
 namespace API.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class CourseController : ControllerBase
@@ -15,7 +14,6 @@ namespace API.Controllers
             _courseService = courseService;
         }
 
-        //[AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<List<Course>>> GetAllCourses()
         {

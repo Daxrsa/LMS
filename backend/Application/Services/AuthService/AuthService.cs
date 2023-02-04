@@ -19,6 +19,7 @@ namespace Application.Services.AuthService
             _context = context;
             _configuration = configuration;
         }
+
         public async Task<ServiceResponse<string>> Login(string email, string password)
         {
             var response = new ServiceResponse<string>();
@@ -95,7 +96,7 @@ namespace Application.Services.AuthService
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Email)
+                new Claim(ClaimTypes.Email, user.Email)
             };
 
             var appSettingsToken = _configuration.GetSection("AppSettings:Token").Value;

@@ -14,7 +14,6 @@ namespace API.Controllers
             _examService = examService;
         }
 
-        //[AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<List<Exam>>> GetAllExams()
         {
