@@ -35,6 +35,7 @@ builder.Services.AddScoped<IRequestService, RequestService>();
 builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options => {
         options.TokenValidationParameters = new TokenValidationParameters

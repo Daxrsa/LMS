@@ -26,7 +26,7 @@ namespace API.Controllers
         public async Task<ActionResult<Course>> GetCourseById(Guid id)
         {
             var result = await _courseService.GetCourseById(id);
-            if(result is null)
+            if (result is null)
             {
                 return NotFound("Course not found");
             }
@@ -44,7 +44,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<Course>>> UpdateCourse(Guid id, Course request)
         {
             var result = await _courseService.UpdateCourse(id, request);
-            if(result is null)
+            if (result is null)
             {
                 return NotFound("Course not found");
             }
@@ -55,7 +55,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<Course>>> DeleteCourse(Guid id)
         {
             var result = await _courseService.DeleteCourse(id);
-            if(result is null)
+            if (result is null)
             {
                 return NotFound("Course not found");
             }
@@ -64,4 +64,3 @@ namespace API.Controllers
 
     }
 }
-    
