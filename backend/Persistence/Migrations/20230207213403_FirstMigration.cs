@@ -198,8 +198,13 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
                     Size = table.Column<double>(type: "REAL", nullable: false),
-                    AssignmentId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Extension = table.Column<string>(type: "TEXT", nullable: true),
+                    AssignmentId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Discriminator = table.Column<string>(type: "TEXT", nullable: false),
+                    AuthorName = table.Column<string>(type: "TEXT", nullable: true),
+                    LastUpdated = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

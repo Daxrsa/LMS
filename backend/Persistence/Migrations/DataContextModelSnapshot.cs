@@ -162,6 +162,16 @@ namespace Persistence.Migrations
                     b.Property<Guid?>("AssignmentId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Size")
                         .HasColumnType("REAL");
 
@@ -170,6 +180,10 @@ namespace Persistence.Migrations
                     b.HasIndex("AssignmentId");
 
                     b.ToTable("Medias");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Media");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Domain.Entities.Photo", b =>
@@ -339,6 +353,26 @@ namespace Persistence.Migrations
                     b.HasIndex("StudentsId");
 
                     b.ToTable("ExamStudent");
+                });
+
+            modelBuilder.Entity("Domain.Entities.PDF", b =>
+                {
+                    b.HasBaseType("Domain.Entities.Media");
+
+                    b.Property<string>("AuthorName")
+                        .HasColumnType("TEXT");
+
+                    b.HasDiscriminator().HasValue("PDF");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Word", b =>
+                {
+                    b.HasBaseType("Domain.Entities.Media");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("TEXT");
+
+                    b.HasDiscriminator().HasValue("Word");
                 });
 
             modelBuilder.Entity("CourseProfessor", b =>
