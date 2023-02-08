@@ -96,7 +96,7 @@ namespace Application.Services.AuthService
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
             };
 
             var appSettingsToken = _configuration.GetSection("AppSettings:Token").Value;
