@@ -12,10 +12,26 @@ using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.OpenApi.Models;
 using Application.Photos;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Logging;
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      builder =>
+                      {
+                          builder.AllowAnyMethod()
+                                 .AllowAnyHeader()
+                                 .AllowCredentials()
+                                 .WithOrigins("http://localhost:3000");
+                      });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -40,9 +56,17 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary")); //just added
 
+//builder.Services.AddAuthorization(auth =>
+//            {
+//                auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
+//                   .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
+//                    .RequireAuthenticatedUser().Build());
+//            });
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options => {
-        options.Authority =  "http://localhost:5113/api/Auth/Login";
+        //options.Authority =  "http://localhost:5113/api/Auth/Login";
+        //options.RequireHttpsMetadata = false;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
@@ -67,6 +91,8 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 

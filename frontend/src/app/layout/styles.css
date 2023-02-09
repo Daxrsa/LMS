@@ -1,0 +1,7 @@
+body{
+  background-color: #eaeaea !important;
+}
+
+.ui.inverted.top.fixed{
+ background-image: radial-gradient(circle, rgba(24,42,115) 0%, rgba(33,138,174) 100%) !important;
+}
