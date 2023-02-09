@@ -21,5 +21,9 @@ namespace Persistence
         public DbSet<Transcript> Transcripts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<PDF> PDFs { get; set; }
+        public DbSet<Word> Words { get; set; }
+
+
     }
 }

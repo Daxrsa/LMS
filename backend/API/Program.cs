@@ -4,6 +4,7 @@ global using Application.Services.RequestService;
 global using Application.Services.AssignmentService;
 global using Application.Services.AuthService;
 global using Application.Services.PhotoService;
+global using Application.Services.FileService;
 using Application.Services.CourseService;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -54,6 +55,7 @@ builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary")); //just added
 
 //builder.Services.AddAuthorization(auth =>
