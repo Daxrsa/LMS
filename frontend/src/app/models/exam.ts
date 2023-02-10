@@ -4,5 +4,5 @@ export interface Exam {
     professor?: any;
     examDate: string; //was Date
     afati: string;
-    students: any[];
+    //students: any[];
 }

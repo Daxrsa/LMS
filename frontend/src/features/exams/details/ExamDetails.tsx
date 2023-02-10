@@ -4,10 +4,12 @@ import { Exam } from "../../../app/models/exam";
 import mathExam from '../../../assets/mathExam.jpeg';
 
 interface Props{
-    exam: Exam
+    exam: Exam;
+    cancelSelectExam: () => void;
+    openForm: (id: string) => void;
 }
 
-export default function ExamDetails({ exam }: Props) {
+export default function ExamDetails({ exam, cancelSelectExam, openForm }: Props) {
   return (
       <Card fluid>
         <Image src={mathExam} />
@@ -28,8 +30,8 @@ export default function ExamDetails({ exam }: Props) {
         </Card.Content>
         <Card.Content>
             <Button.Group widths='2'>
-                <Button basic color="blue" content='Edit' />
-                <Button basic color="grey" content='Cancel' />
+                <Button onClick={() => openForm(exam.id)} basic color="blue" content='Edit' />
+                <Button onClick={cancelSelectExam} basic color="grey" content='Cancel' />
             </Button.Group>
         </Card.Content>
       </Card>

@@ -33,6 +33,12 @@ namespace Persistence
                     Id = Guid.Parse("b9190e29-5a88-433b-84c6-774871dcb1bc"),
                     ExamDate = DateTime.Parse("12/07/2024 23:00"),
                     Afati = "JANAR 2021"
+                },
+                new Exam
+                {
+                    Id = Guid.Parse("fe782c6b-e625-4415-ad37-e5e4635f6c31"),
+                    ExamDate = DateTime.Parse("12/07/1990 21:00"),
+                    Afati = "JANAR 2026"
                 }
                 
             };      
