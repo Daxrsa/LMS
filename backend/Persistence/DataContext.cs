@@ -23,7 +23,5 @@ namespace Persistence
         public DbSet<Photo> Photos { get; set; }
         public DbSet<PDF> PDFs { get; set; }
         public DbSet<Word> Words { get; set; }
-
-
     }
 }
